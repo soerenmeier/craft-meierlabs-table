@@ -51,5 +51,5 @@ Craft CMS 5 and CKEditor 5.
 ## Installation
 
 ```bash
-composer require soerenmeier/meierlabs-table -w && php craft plugin/install meierlabs-table
+composer require soerenmeier/meierlabs-table:^0.1@alpha -w && php craft plugin/install meierlabs-table
 ```

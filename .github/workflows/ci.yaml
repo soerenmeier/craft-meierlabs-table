@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  js:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check prettier
+        run: npm run check-fmt
+
+      - name: Run build
+        run: npm run build
+
+      - name: Check that src/dist is up to date
+        run: git diff --exit-code src/dist || (echo "run npm run build and commit src/dist" && exit 1)
