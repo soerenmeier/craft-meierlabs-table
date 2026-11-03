@@ -233,6 +233,7 @@ class RichTable extends Table
 
 		$view->registerAssetBundle(TimepickerAsset::class);
 		$view->registerAssetBundle(TableSettingsAsset::class);
+		MeierLabsTable::$plugin->vite->register('src/main.js');
 		$view->registerJs('new Craft.TableFieldSettings(' .
 			Json::encode($view->namespaceInputName('columns')) . ', ' .
 			Json::encode($view->namespaceInputName('defaults')) . ', ' .
@@ -272,7 +273,8 @@ class RichTable extends Table
 
 		return $view->renderTemplate('_components/fieldtypes/Table/settings.twig', [
 			'field' => $this,
-			'columnsField' => $columnsField,
+			// the class disables the "Editor" setting of other column types
+			'columnsField' => Html::tag('div', $columnsField, ['class' => 'ml-rich-table-columns']),
 			'defaultsField' => $defaultsField,
 			'readOnly' => $readOnly,
 		]);

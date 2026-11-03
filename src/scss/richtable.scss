@@ -49,3 +49,13 @@
 .ml-rich-table-static p {
 	margin: 0;
 }
+
+/* field settings: "Editor" only applies to rich text columns */
+.ml-rich-table-columns
+	tbody
+	tr:not(:has(> td:nth-child(4) option[value='richtext']:checked))
+	> td:nth-child(5)
+	.select {
+	opacity: 0.25;
+	pointer-events: none;
+}
