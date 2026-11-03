@@ -1,0 +1,11 @@
+{
+  "src/main.js": {
+    "file": "assets/main-BrLolg-l.js",
+    "name": "main",
+    "src": "src/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main-KDVU6NV2.css"
+    ]
+  }
+}

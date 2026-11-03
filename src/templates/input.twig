@@ -1,0 +1,10 @@
+{# Craft's editable table, but rich text cells get the CKEditor input rendered by RichTable #}
+{% embed '_includes/forms/editableTable.twig' %}
+	{% block tablecell %}
+		{%- if col.type == 'richtext' -%}
+			{{ value|raw }}
+		{%- else -%}
+			{{ parent() }}
+		{%- endif -%}
+	{% endblock %}
+{% endembed %}

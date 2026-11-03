@@ -1,0 +1,42 @@
+{
+	"name": "soerenmeier/meierlabs-table",
+	"description": "A Craft CMS table field with CKEditor columns.",
+	"type": "craft-plugin",
+	"license": "proprietary",
+	"support": {
+		"source": "https://github.com/soerenmeier/craft-meierlabs-table"
+	},
+	"authors": [
+		{
+			"name": "Sören Meier",
+			"homepage": "https://github.com/soerenmeier"
+		}
+	],
+	"require": {
+		"php": ">=8.2",
+		"craftcms/cms": "^5.0.0",
+		"craftcms/ckeditor": "^5.0.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"soerenmeier\\meierlabstable\\": "src/"
+		}
+	},
+	"extra": {
+		"handle": "meierlabs-table",
+		"name": "Meier Labs Table",
+		"developer": "Sören Meier",
+		"documentationUrl": "",
+		"class": "soerenmeier\\meierlabstable\\MeierLabsTable"
+	},
+	"config": {
+		"sort-packages": true,
+		"platform": {
+			"php": "8.2"
+		},
+		"allow-plugins": {
+			"yiisoft/yii2-composer": true,
+			"craftcms/plugin-installer": true
+		}
+	}
+}
